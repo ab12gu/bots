@@ -1,4 +1,5 @@
 # Delete messsage posted by slackbot
+# - need to run following code on local bash
 #
 # $ python3 -m venv venv   
 # $ source venv/bin/activate  
