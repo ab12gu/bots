@@ -23,5 +23,5 @@ jobs:
       - name: Run Slack script
         run: python slack_post.py
         env:
-          SLACK_TOKEN: ${{ secrets.SLACK_WEBSITE_TOKEN }}
-          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID_WEBSITE }}
