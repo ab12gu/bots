@@ -24,4 +24,5 @@ jobs:
         run: python slack_post.py
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          CHANNEL_ID: ${{ secrets.CHANNEL_ID_WEBSITE }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID_NEWBIE }}
+          #CHANNEL_ID: ${{ secrets.CHANNEL_ID_WEBSITE }}
