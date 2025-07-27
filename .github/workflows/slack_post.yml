@@ -1,0 +1,27 @@
+name: Weekly Slack Poll
+
+on:
+  schedule:
+    - cron: '0 17 * * 1'  # Every Monday at 10am PDT (17:00 UTC)
+  workflow_dispatch:      # Optional: allows manual run
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Run Slack script
+        run: python slack_post.py
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID }}
