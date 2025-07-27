@@ -1,7 +1,7 @@
 import os
 import requests
 
-SLACK_TOKEN = os.getenv("SLACK_WEBSITE_TOKEN")
+SLACK_TOKEN = os.getenv("SLACK_TOKEN")
 CHANNEL_ID = os.getenv("CHANNEL_ID")
 
 text = "*Wednesday newbie polo 6pm till dark @ Judkin's Park*\nReact with 🚴 if you're in!"
