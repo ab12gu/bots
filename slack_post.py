@@ -5,7 +5,7 @@ SLACK_TOKEN = os.getenv("SLACK_TOKEN")
 CHANNEL_ID = os.getenv("CHANNEL_ID")
 
 text = (
-    "*🆕 Wed-Newbs 🆕*\n"
+    "*🆕 Wed-Newbs 🆕*\n\n"
     "*Time:* 6pm till dark\n"
     "*Location*:@ Judkin's Park\n\n"
     "Give same emoji if down"
