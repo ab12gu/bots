@@ -6,8 +6,8 @@ CHANNEL_ID = os.getenv("CHANNEL_ID")
 
 text = (
     "*Wed-Newbs*\n"
-    "6pm till dark\n"
-    "@ Judkin's Park\n\n"
+    "*Time:* 6pm till dark\n"
+    "*Location*:@ Judkin's Park\n\n"
     "Give same emoji if down"
 )
 res = requests.post("https://slack.com/api/chat.postMessage", json={
