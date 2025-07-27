@@ -1,3 +1,15 @@
+# Delete messsage posted by slackbot
+#
+# $ python3 -m venv venv   
+# $ source venv/bin/activate  
+# $ pip install requests
+# $ SLACK_TOKEN='xoxb-..."
+# $ CHANNEL_ID='CKHJURLQJ'   
+# $ MESSAGE_TS='1753651851.426429'
+# $ python3 delete-message.py  
+# $ deactivate
+#
+
 import requests
 import os
 
