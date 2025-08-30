@@ -21,7 +21,7 @@ jobs:
         run: pip install requests
 
       - name: Run Slack script
-        run: python slack_great_games.py
+        run: python great_games_today.py
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
           CHANNEL_ID: ${{ secrets.CHANNEL_ID_NEWBIE }}
