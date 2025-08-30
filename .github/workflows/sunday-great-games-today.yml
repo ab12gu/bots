@@ -1,0 +1,28 @@
+name: Great Games Today Message
+
+on:
+  schedule:
+    - cron: '00 19 * * 0'  # Every Sun at 7pm PST
+  workflow_dispatch:      # Optional: allows manual run
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Run Slack script
+        run: python 206bikepolo/great_games_today.py
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID_NEWBIE }}
+          #CHANNEL_ID: ${{ secrets.CHANNEL_ID_WEBSITE }}
