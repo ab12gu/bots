@@ -1,4 +1,4 @@
-name: Weekly Slack Poll
+name: Great Games Today Message
 
 on:
   schedule:
