@@ -1,0 +1,28 @@
+name: Weekly Slack Poll
+
+on:
+  schedule:
+    - cron: '00 21 * * 3'  # Every Wed at 9pm PDT (17:00 UTC)
+  workflow_dispatch:      # Optional: allows manual run
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install requests
+        run: pip install requests
+
+      - name: Run Slack script
+        run: python slack_great_games.py
+        env:
+          SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID_NEWBIE }}
+          #CHANNEL_ID: ${{ secrets.CHANNEL_ID_WEBSITE }}
