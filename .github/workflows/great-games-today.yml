@@ -2,7 +2,9 @@ name: Great Games Today Message
 
 on:
   schedule:
-    - cron: '00 21 * * 3'  # Every Wed at 9pm PDT (17:00 UTC)
+    - cron: '00 21 * * 3'  # Every Wed at 9pm PST
+    - cron: '00 19 * * 0'  # Every Sun at 7pm PST
+    # - cron: '00 19 * * 6' # Every Sat at 7pm PST
   workflow_dispatch:      # Optional: allows manual run
 
 jobs:
