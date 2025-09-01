@@ -24,7 +24,7 @@ jobs:
 
       - name: Run Slack script
         run: |
-          if [ "${{ github.event.schedule }}" = "00 21 * * 3" ]; then
+          if [ "${{ github.event.schedule }}" = "0 5 * * 4" ]; then
             export CHANNEL_ID="${{ secrets.CHANNEL_ID_NEWBIE }}"
           else
             export CHANNEL_ID="${{ secrets.CHANNEL_ID_PICKUP }}"
