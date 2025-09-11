@@ -1,5 +1,9 @@
 name: Run Discord Subscribe Bot
 
+concurrency:
+  group: subscribe-workflow
+  cancel-in-progress: true
+
 on:
   push:
     branches: [ main ]
