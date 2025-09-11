@@ -8,22 +8,33 @@ on:
 jobs:
   bot:
     runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./discord/byobg
+    env:
+      BOT_TOKEN: ${{ secrets.BYOBG_BOT_TOKEN }}
+      TARGET_USER_ID: ${{ secrets.ABGUP_USER_ID }}
+      
     steps:
       - uses: actions/checkout@v3
-      
+
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
 
-      - name: Start UV environment && run script
-        working-directory: ./discord/byobg
-        env:
-          BOT_TOKEN: ${{ secrets.BYOBG_BOT_TOKEN }}
-          TARGET_USER_ID: ${{ secrets.ABGUP_USER_ID }}
-        run: |
-          pip install uv
-          uv venv
-          source .venv/bin/activate
-          uv pip install discord.py
-          uv run python subscribe.py
+      - name: Install UV 
+        run: pip install uv
+
+      - name: Create Virtual Environment
+        run: uv venv
+
+      - name: Activate venv
+        run: source .venv/bin/activate
+
+      - name: Install dependencies
+        run: uv pip install discord.py
+
+      - name: Run script
+        run: uv run python subscribe.py
