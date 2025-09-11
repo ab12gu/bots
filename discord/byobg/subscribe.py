@@ -36,17 +36,13 @@ def push_json_to_github():
         subprocess.run(["git", "add", SUB_FILE], check=True)
         subprocess.run(["git", "commit", "-m", "Update subscribers.json [skip ci]"], check=False)
 
-        # Push using the token
-        subprocess.run([
-            "git",
-            "push",
-            f"https://x-access-token:{GITHUB_TOKEN}@github.com/ab12gu/bots.git",
-            "main"
-        ], check=True)
+        # Push using the default remote configured by actions/checkout
+        subprocess.run(["git", "push", "origin", "main"], check=True)
 
         print("✅ Pushed subscribers.json to GitHub")
     except subprocess.CalledProcessError as e:
         print("❌ Git push failed:", e)
+
 
 
 @bot.command()
