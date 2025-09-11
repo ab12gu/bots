@@ -7,7 +7,7 @@ intents.members = True  # Needed to fetch members
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 # Replace with the target user's Discord ID
-TARGET_USER_ID = ${{ secrets.ABGUP_USER_ID }} # <-- put their ID here
+TARGET_USER_ID = int(os.getenv("TARGET_USER_ID")) # <-- put their ID here
 MESSAGE_TO_SEND = "Hello! This is a DM from the bot."
 
 @bot.event
@@ -26,5 +26,5 @@ async def on_ready():
 
 
 
-bot.run("${{ secrets.BYOBG_BOT_TOKEN }}")
+bot.run(os.getenv("BOT_TOKEN"))
 
