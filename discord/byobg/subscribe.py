@@ -25,14 +25,27 @@ bot = commands.Bot(command_prefix="!", intents=intents)
 def push_json_to_github():
     """Commit and push the updated subscribers.json to GitHub."""
     try:
-        os.chdir(REPO_PATH)
-        subprocess.run(["git", "pull", "--rebase"], check=True)
+        os.chdir(REPO_PATH)  # repo root
+
+        # Reset any unstaged changes (so pull won't fail)
+        subprocess.run(["git", "reset", "--hard"], check=True)
+        
+        # Pull latest changes from main
+        subprocess.run(["git", "pull", "origin", "main"], check=True)
+
+        # Add and commit subscribers.json
         subprocess.run(["git", "add", SUB_FILE], check=True)
-        subprocess.run(["git", "commit", "-m", "Update subscribers.json [skip ci]"], check=False)
+        subprocess.run(
+            ["git", "commit", "-m", "Update subscribers.json [skip ci]"], check=False
+        )
+
+        # Push changes
         subprocess.run(["git", "push", "origin", "main"], check=True)
         print("✅ Pushed subscribers.json to GitHub")
     except subprocess.CalledProcessError as e:
         print("❌ Git push failed:", e)
+
+
 
 @bot.command()
 async def subscribe(ctx):
