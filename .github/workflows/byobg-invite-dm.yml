@@ -21,11 +21,13 @@ jobs:
 
       - name: Create UV virtual environment
         working-directory: ./discord/byobg
-        run: uv venv
+        run: |
+          uv venv
+          source .venv/bin/activate
 
       - name: Install dependencies via UV
         working-directory: ./discord/byobg  # <-- path to folder with pyproject.toml
-        run: uv pip install
+        run: uv install
 
       - name: Run bot
         working-directory: ./discord/byobg  # <-- same folder
