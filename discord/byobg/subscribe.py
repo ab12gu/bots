@@ -24,7 +24,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 def push_json_to_github():
-        """Commit and push the updated subscribers.json to GitHub."""
+    """Commit and push the updated subscribers.json to GitHub."""
     try:
         os.chdir(REPO_PATH)
 
