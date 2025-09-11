@@ -1,4 +1,7 @@
-# slack-bots
+# bots
+
+## Slack bots
+
 bots to use with slack
 
 slack api:
