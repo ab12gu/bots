@@ -34,7 +34,7 @@ async def on_ready():
             user = await bot.fetch_user(int(user_id))
 
             ## OVERRIDE
-            user = await.fetch_user(TARGET_USER_ID)
+            user = await bot.fetch_user(TARGET_USER_ID)
             if user:
                 await user.send(MESSAGE_TO_SEND)
                 print(f"✅ Sent DM to {user.name}")
