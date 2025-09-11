@@ -5,6 +5,7 @@ import os
 import subprocess
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN")  # GitHub Actions provides this automatically
 
 # Adjust this to point to the repo root
 REPO_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
@@ -23,28 +24,29 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 def push_json_to_github():
-    """Commit and push the updated subscribers.json to GitHub."""
+        """Commit and push the updated subscribers.json to GitHub."""
     try:
-        os.chdir(REPO_PATH)  # repo root
+        os.chdir(REPO_PATH)
 
-        # Reset any unstaged changes (so pull won't fail)
-        subprocess.run(["git", "reset", "--hard"], check=True)
-        
-        # Pull latest changes from main
-        subprocess.run(["git", "pull", "origin", "main"], check=True)
+        # Configure Git identity
+        subprocess.run(["git", "config", "user.name", "github-actions[bot]"], check=True)
+        subprocess.run(["git", "config", "user.email", "github-actions[bot]@users.noreply.github.com"], check=True)
 
-        # Add and commit subscribers.json
+        # Add and commit
         subprocess.run(["git", "add", SUB_FILE], check=True)
-        subprocess.run(
-            ["git", "commit", "-m", "Update subscribers.json [skip ci]"], check=False
-        )
+        subprocess.run(["git", "commit", "-m", "Update subscribers.json [skip ci]"], check=False)
 
-        # Push changes
-        subprocess.run(["git", "push", "origin", "main"], check=True)
+        # Push using the token
+        subprocess.run([
+            "git",
+            "push",
+            f"https://x-access-token:{GITHUB_TOKEN}@github.com/ab12gu/bots.git",
+            "main"
+        ], check=True)
+
         print("✅ Pushed subscribers.json to GitHub")
     except subprocess.CalledProcessError as e:
         print("❌ Git push failed:", e)
-
 
 
 @bot.command()
