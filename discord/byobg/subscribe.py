@@ -7,7 +7,8 @@ import subprocess
 # Environment variables
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 REPO_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
-SUB_FILE = os.path.join(REPO_PATH, "subscribers.json")
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+SUB_FILE = os.path.join(SCRIPT_DIR, "subscribers.json")
 
 # Load subscribers
 if os.path.exists(SUB_FILE):
