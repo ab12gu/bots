@@ -32,7 +32,3 @@ async def unsubscribe(ctx):
     await ctx.send("You have unsubscribed!")
 
 bot.run(BOT_TOKEN)
-
-if __name__ == "__main__":
-    # only runs when the file is executed directly
-    main()
