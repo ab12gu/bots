@@ -2,9 +2,14 @@ import discord
 from discord.ext import commands
 import json
 import os
+import subprocess
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 SUB_FILE = "subscribers.json"
+
+# Adjust this to point to the repo root
+REPO_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+
 
 # Load subscribers
 if os.path.exists(SUB_FILE):
@@ -14,8 +19,20 @@ else:
     subscribers = set()
 
 intents = discord.Intents.default()
-intents.message_content = True  # <-- required to read messages
+intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
+
+def push_json_to_github():
+    """Commit and push the updated subscribers.json to GitHub."""
+    try:
+        os.chdir(REPO_PATH)
+        subprocess.run(["git", "pull", "--rebase"], check=True)
+        subprocess.run(["git", "add", SUB_FILE], check=True)
+        subprocess.run(["git", "commit", "-m", "Update subscribers.json [skip ci]"], check=False)
+        subprocess.run(["git", "push", "origin", "main"], check=True)
+        print("✅ Pushed subscribers.json to GitHub")
+    except subprocess.CalledProcessError as e:
+        print("❌ Git push failed:", e)
 
 @bot.command()
 async def subscribe(ctx):
@@ -23,6 +40,7 @@ async def subscribe(ctx):
     with open(SUB_FILE, "w") as f:
         json.dump(list(subscribers), f)
     await ctx.send("You have subscribed!")
+    push_json_to_github()  # push after update
 
 @bot.command()
 async def unsubscribe(ctx):
@@ -30,5 +48,8 @@ async def unsubscribe(ctx):
     with open(SUB_FILE, "w") as f:
         json.dump(list(subscribers), f)
     await ctx.send("You have unsubscribed!")
+    push_json_to_github()  # push after update
 
-bot.run(BOT_TOKEN)
+if __name__ == "__main__":
+    bot.run(BOT_TOKEN)
+
