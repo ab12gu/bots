@@ -5,10 +5,10 @@ import os
 import subprocess
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-SUB_FILE = os.path.join(REPO_PATH, "subscribers.json")
 
 # Adjust this to point to the repo root
 REPO_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
+SUB_FILE = os.path.join(REPO_PATH, "subscribers.json")
 
 
 # Load subscribers
