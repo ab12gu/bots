@@ -19,6 +19,10 @@ jobs:
       - name: Install UV
         run: pip install uv
 
+      - name: Create UV virtual environment
+        working-directory: ./discord/byobg
+        run: uv venv
+
       - name: Install dependencies via UV
         working-directory: ./discord/byobg  # <-- path to folder with pyproject.toml
         run: uv pip install --group default
