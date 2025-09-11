@@ -1,0 +1,9 @@
+[project]
+name = "byobg"
+version = "0.1.0"
+dependencies = [
+    "discord-py",
+]
+
+
+
