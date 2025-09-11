@@ -24,11 +24,6 @@ async def on_ready():
             print(f"❌ Could not DM {user.name}: {e}")
     await bot.close()  # Optional: stops the bot after sending
 
-
-
-
-bot.run(os.getenv("BOT_TOKEN"))
-
+# Only run this if executed directly
 if __name__ == "__main__":
-    # only runs when the file is executed directly
-    main()
+    bot.run(os.getenv("BOT_TOKEN"))
