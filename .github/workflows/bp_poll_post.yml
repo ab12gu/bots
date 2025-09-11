@@ -1,4 +1,4 @@
-name: Weekly Slack Poll
+name: BP RSVP Game Poll
 
 on:
   schedule:

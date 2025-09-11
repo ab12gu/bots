@@ -1,4 +1,4 @@
-name: Send BYOBG Invites
+name: BYOBG Send Invite DMs
 
 on:
   #push:

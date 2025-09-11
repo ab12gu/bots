@@ -1,4 +1,4 @@
-name: Run Discord Subscribe Bot
+name: BYOBG Run Subscription Watcher
 
 permissions:
   contents: write  # allow pushing changes

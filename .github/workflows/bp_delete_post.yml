@@ -1,4 +1,4 @@
-name: Delete Post
+name: BYOBG Delete Post
 
 on:
   workflow_dispatch:      # Optional: allows manual run
