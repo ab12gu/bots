@@ -26,4 +26,4 @@ jobs:
           uv venv
           source .venv/bin/activate
           uv pip install discord.py
-          uv run python dm-invite.py
+          uv run python invite.py
