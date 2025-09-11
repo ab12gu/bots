@@ -10,11 +10,21 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
-      - name: Install dependencies
-        run: pip install -r requirements.txt
+
+      - name: Install UV
+        run: pip install uv
+
+      - name: Install dependencies via UV
+        working-directory: ./discord/byobg  # <-- path to folder with pyproject.toml
+        run: uv install
+
       - name: Run bot
-        run: python discord/byobg/dm-invite.py
+        working-directory: ./subfolder  # <-- same folder
+        env:
+          BOT_TOKEN: ${{ secrets.BYOBG_BOT_TOKEN }}
+        run: uv run python discord/byobg/dm-invite.py
