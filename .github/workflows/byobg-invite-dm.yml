@@ -25,7 +25,7 @@ jobs:
 
       - name: Install dependencies via UV
         working-directory: ./discord/byobg  # <-- path to folder with pyproject.toml
-        run: uv pip install --group default
+        run: uv pip install
 
       - name: Run bot
         working-directory: ./discord/byobg  # <-- same folder
