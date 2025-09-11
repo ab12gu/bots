@@ -24,7 +24,7 @@ jobs:
         run: uv install
 
       - name: Run bot
-        working-directory: ./subfolder  # <-- same folder
+        working-directory: ./discord/byobg  # <-- same folder
         env:
           BOT_TOKEN: ${{ secrets.BYOBG_BOT_TOKEN }}
         run: uv run python discord/byobg/dm-invite.py
