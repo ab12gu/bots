@@ -16,22 +16,14 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install UV
-        run: pip install uv
-
-      - name: Create UV virtual environment
+      - name: Start UV environment && run script
         working-directory: ./discord/byobg
-        run: |
-          uv venv
-          source .venv/bin/activate
-
-      - name: Install dependencies via UV
-        working-directory: ./discord/byobg  # <-- path to folder with pyproject.toml
-        run: uv pip install discord.py
-
-      - name: Run bot
-        working-directory: ./discord/byobg  # <-- same folder
         env:
           BOT_TOKEN: ${{ secrets.BYOBG_BOT_TOKEN }}
           TARGET_USER_ID: ${{ secrets.ABGUP_USER_ID }}
-        run: uv run python dm-invite.py
+        run: |
+          pip install uv
+          uv venv
+          source .venv/bin/activate
+          uv pip install discord.py
+          uv run python dm-invite.py
