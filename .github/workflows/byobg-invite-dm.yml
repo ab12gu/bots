@@ -21,10 +21,10 @@ jobs:
 
       - name: Install dependencies via UV
         working-directory: ./discord/byobg  # <-- path to folder with pyproject.toml
-        run: uv pip install
+        run: uv install
 
       - name: Run bot
         working-directory: ./discord/byobg  # <-- same folder
         env:
           BOT_TOKEN: ${{ secrets.BYOBG_BOT_TOKEN }}
-        run: uv run python discord/byobg/dm-invite.py
+        run: uv run python dm-invite.py
