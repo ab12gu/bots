@@ -7,6 +7,7 @@ import asyncio
 # Paths
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 SUB_FILE = os.path.join(SCRIPT_DIR, "subscribers.json")
+MSG_FILE = os.path.join(SCRIPT_DIR, "message.txt")
 
 # Load subscribers from JSON
 if os.path.exists(SUB_FILE):
@@ -15,7 +16,12 @@ if os.path.exists(SUB_FILE):
 else:
     subscribers = []
 
-MESSAGE_TO_SEND = "Hello! This is a DM from the bot."
+# Load message
+if os.path.exists(MSG_FILE):
+    with open(MSG_FILE, "r", encoding="utf-8") as f:
+        MESSAGE_TO_SEND = f.read().strip()
+    else:
+        MESSAGE_TO_SEND = "Hello! This is a DM from the bot."
 
 ## OVERRIDE LOOP WITH SELF ID
 TARGET_USER_ID = int(os.getenv("TARGET_USER_ID"))
