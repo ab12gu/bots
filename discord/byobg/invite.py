@@ -20,8 +20,8 @@ else:
 if os.path.exists(MSG_FILE):
     with open(MSG_FILE, "r", encoding="utf-8") as f:
         MESSAGE_TO_SEND = f.read().strip()
-    else:
-        MESSAGE_TO_SEND = "Hello! This is a DM from the bot."
+else:
+    MESSAGE_TO_SEND = "Hello! This is a DM from the bot."
 
 ## OVERRIDE LOOP WITH SELF ID
 TARGET_USER_ID = int(os.getenv("TARGET_USER_ID"))
