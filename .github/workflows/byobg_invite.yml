@@ -8,6 +8,13 @@ on:
 jobs:
   bot:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./discord/byobg
+    env:
+      BOT_TOKEN: ${{ secrets.BYOBG_BOT_TOKEN }}
+      TARGET_USER_ID: ${{ secrets.ABGUP_USER_ID }}
+      
     steps:
       - uses: actions/checkout@v3
       
@@ -15,15 +22,15 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.11'
+          
+      - name: Install UV 
+        run: pip install uv
 
-      - name: Start UV environment && run script
-        working-directory: ./discord/byobg
-        env:
-          BOT_TOKEN: ${{ secrets.BYOBG_BOT_TOKEN }}
-          TARGET_USER_ID: ${{ secrets.ABGUP_USER_ID }}
-        run: |
-          pip install uv
-          uv venv
-          source .venv/bin/activate
-          uv pip install discord.py
-          uv run python invite.py
+      - name: Install dependencies
+        run: uv pip install discord.py
+
+      - name: Run script
+        run: uv run python invite.py
+
+
+
