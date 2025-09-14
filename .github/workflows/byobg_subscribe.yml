@@ -18,9 +18,6 @@ jobs:
   bot:
     runs-on: ubuntu-latest
 
-    defaults:
-      run:
-        working-directory: ./discord/byobg
     env:
       BOT_TOKEN: ${{ secrets.BYOBG_BOT_TOKEN }}
       TARGET_USER_ID: ${{ secrets.ABGUP_USER_ID }}
