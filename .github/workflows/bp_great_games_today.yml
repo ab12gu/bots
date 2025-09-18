@@ -2,9 +2,9 @@ name: BP Great Games Today Post
 
 on:
   schedule:
-    - cron: '0 5 * * 4'  # Thu 5:00 UTC = Wed 9:00pm PST
-    - cron: '0 3 * * 1'  # Every Sun 7pm PST (Mon 3am UTC)
-    # - cron: '0 3 * * 0'  # Sat 7pm PST  (Sun 3am UTC)
+    - cron: '0 5 * * 4'  # Thu 5:00 UTC = Wed 9:00pm PST, newbie
+    - cron: '0 3 * * 1'  # Every Sun 7pm PST (Mon 3am UTC), pickup
+    - cron: '0 3 * * 0'  # Sat 7pm PST  (Sun 3am UTC), newbie
   workflow_dispatch:      # Optional: allows manual run
 
 jobs:
@@ -26,6 +26,6 @@ jobs:
         run: python 206bikepolo/great_games_today.py
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          CHANNEL_ID: ${{ github.event.schedule == '0 5 * * 4' && secrets.CHANNEL_ID_NEWBIE || secrets.CHANNEL_ID_PICKUP }}
+          CHANNEL_ID: ${{ github.event.schedule == '0 3 * * 1' && secrets.CHANNEL_ID_PICKUP || secrets.CHANNEL_ID_NEWBIE }}
           #CHANNEL_ID: ${{ secrets.CHANNEL_ID_NEWBIE }}
           #CHANNEL_ID: ${{ secrets.CHANNEL_ID_WEBSITE }}
