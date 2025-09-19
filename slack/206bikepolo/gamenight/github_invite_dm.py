@@ -41,7 +41,7 @@ for user in users:
         # Send message
         client.chat_postMessage(channel=channel_id, text=message)
 
-        print(f"Message sent to {USER_ID}")
+        print(f"Message sent to {user_id}")
 
     except SlackApiError as e:
         print(f"Error sending DM: {e.response['error']}")
