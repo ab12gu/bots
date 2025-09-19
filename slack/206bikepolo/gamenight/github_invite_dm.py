@@ -5,13 +5,13 @@ from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
 #SLACK_BOT_TOKEN = ""
-SLACK_BOT_TOKEN = os.getenv("SLACK_BOT_TOKEN")
+SLACK_BOT_TOKEN = os.getenv("SLACK_TOKEN")
 
 # Read token from file
 #with open("slack_token.txt", "r") as f:
     #SLACK_BOT_TOKEN = f.read().strip()
 
-client = WebClient(token=SLACK_BOT_TOKEN)
+client = WebClient(token=SLACK_TOKEN)
 
 ## Replace with the user ID you want to DM
 #USER_ID = "U06AWV00DL2"
