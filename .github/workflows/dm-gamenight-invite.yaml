@@ -1,0 +1,16 @@
+name: Send Slack DM
+
+on:
+  workflow_dispatch:
+
+jobs:
+  send_dm:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Run Slack DM script
+        env:
+          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+        run: uv run python slack/206bikepolo/gamenight/github_invite_dm.py
