@@ -17,9 +17,6 @@ jobs:
       - name: Install UV 
         run: pip install uv
 
-      - name: Install dependencies
-        run: pip install .
-
       - name: Run Slack DM script
         run: uv run python gamenight/github_invite_dm.py
 
