@@ -5,7 +5,7 @@ from slack_sdk import WebClient
 from slack_sdk.errors import SlackApiError
 
 #SLACK_BOT_TOKEN = ""
-SLACK_BOT_TOKEN = os.environ["SLACK_BOT_TOKEN"]
+SLACK_BOT_TOKEN = os.getenv("SLACK_BOT_TOKEN")
 
 # Read token from file
 #with open("slack_token.txt", "r") as f:
