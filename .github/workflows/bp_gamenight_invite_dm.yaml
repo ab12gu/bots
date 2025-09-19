@@ -8,6 +8,8 @@ jobs:
     defaults:
       run:
         working-directory: slack/206bikepolo/
+    env:
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
     steps:
       - uses: actions/checkout@v3
@@ -20,5 +22,4 @@ jobs:
 
       - name: Run Slack DM script
         run: uv run python gamenight/github_invite_dm.py
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+
