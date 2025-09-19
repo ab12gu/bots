@@ -35,7 +35,7 @@ for user in users:
 
     try:
         # Open DM channel
-        dm = client.conversations_open(users=USER_ID)
+        dm = client.conversations_open(users=user_id)
         channel_id = dm["channel"]["id"]
 
         # Send message
