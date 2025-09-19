@@ -9,7 +9,7 @@ jobs:
       run:
         working-directory: slack/206bikepolo/
     env:
-      SLACK_BOT_TOKEN: ${{ secrets.SLACK_TOKEN }}
+      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
     steps:
       - uses: actions/checkout@v3
