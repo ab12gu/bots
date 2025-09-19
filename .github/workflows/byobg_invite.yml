@@ -21,9 +21,6 @@ jobs:
       - name: Install UV 
         run: pip install uv
 
-      - name: Install dependencies
-        run: pip install .
-
       - name: Run script
         run: uv run python invite.py
 
