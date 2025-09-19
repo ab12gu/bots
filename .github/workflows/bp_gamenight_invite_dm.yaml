@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: .slack/206bikepolo/
+        working-directory: slack/206bikepolo/
 
     steps:
       - uses: actions/checkout@v3
