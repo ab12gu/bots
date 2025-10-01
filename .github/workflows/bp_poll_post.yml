@@ -21,8 +21,8 @@ jobs:
         run: pip install requests
 
       - name: Run Slack script
-        run: python slack_post.py
+        run: python slack/206bikepolo/poll/post.py
         env:
           SLACK_TOKEN: ${{ secrets.SLACK_TOKEN }}
-          CHANNEL_ID: ${{ secrets.CHANNEL_ID_NEWBIE }}
-          #CHANNEL_ID: ${{ secrets.CHANNEL_ID_WEBSITE }}
+          CHANNEL_ID: ${{ secrets.CHANNEL_ID_WEBSITE }}
+          #CHANNEL_ID: ${{ secrets.CHANNEL_ID_NEWBIE }}
