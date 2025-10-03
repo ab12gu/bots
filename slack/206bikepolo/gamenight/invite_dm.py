@@ -24,10 +24,12 @@ for user in users:
     user_id = user["id"] #USER_ID
 
     message = textwrap.dedent(f"""
-        Eyyo {user.get('username', '')}!
+    
+        Gamenight Tomorrow 7pm!!!
 
-        Gamenight tomorrow @ 6pm (Sat, 9-20)
-        In Interbay, near Queen Anne
+        imma b in Vancouver but
+        John is host, dm him on arrival
+        678-849-3221
 
         Check website for deets:
         <https://byobg.com|byobg.com>
