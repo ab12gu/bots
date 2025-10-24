@@ -25,9 +25,8 @@ for user in users:
 
    
     # Check each user individually
-    for uid in [user_id, "U06AWV00DL2"]:
-        info = client.users_info(user=uid)
-        print(uid, info["user"]["deleted"], info["user"]["is_bot"])
+    info = client.users_info(user="U06AWV00DL2")
+    print("U06AWV00DL2", info["user"]["deleted"], info["user"]["is_bot"])
 
 
     # Load message from file
