@@ -23,6 +23,13 @@ with open("data/subscribers.json", "r") as f:
 for user in users:
     user_id = user["id"] #USER_ID
 
+   
+    # Check each user individually
+    for uid in [user_id, "U06AWV00DL2"]:
+        info = client.users_info(user=uid)
+        print(uid, info["user"]["deleted"], info["user"]["is_bot"])
+
+
     # Load message from file
     with open("data/message.txt", "r") as f:
         message = f.read().strip()
@@ -35,11 +42,6 @@ for user in users:
             is_private=True
         )
         channel_id = response["channel"]["id"]
-
-        # Check each user individually
-        for uid in [user_id, "U06AWV00DL2"]:
-            info = client.users_info(user=uid)
-            print(uid, info["user"]["deleted"], info["user"]["is_bot"])
 
         # Invite both the user and abgup to the channel
         client.conversations_invite(
