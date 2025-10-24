@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: slack/206bikepolo/
+        working-directory: slack/byobg/
     env:
       SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
 
@@ -18,5 +18,5 @@ jobs:
         run: pip install uv
 
       - name: Run Slack DM script
-        run: uv run python gamenight/github_invite_dm.py
+        run: uv run python scripts/invite_dm.py
 
