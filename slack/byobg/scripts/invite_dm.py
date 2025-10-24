@@ -39,7 +39,7 @@ for user in users:
         # Invite both the user and abgup to the channel
         client.conversations_invite(
             channel=channel_id,
-            users=f"{user_id},abgup"
+            users=f"{user_id},{"U06AWV00DL2"}"  # Replace with abgup's user ID
         )
 
         # Send message
