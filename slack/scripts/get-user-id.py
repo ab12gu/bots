@@ -1,7 +1,9 @@
 import os
 from slack_sdk import WebClient
 
-# SLACK_BOT_TOKEN = "xoxb-"
+# Read token from file
+with open("slack_token.txt", "r") as f:
+    SLACK_BOT_TOKEN = f.read().strip()
 
 client = WebClient(token=SLACK_BOT_TOKEN)
 #client = WebClient(token=os.environ['SLACK_BOT_TOKEN'])

@@ -167,7 +167,7 @@ U06UTC96003 skimberk1 Sebastian Kimberk
 U06UUQG0MPU rodrick.rodrick Rod 
 U06UW4G3MTQ hayes.ciera Ciera Hayes 
 U06V850DCTB vbroto Victor Broto 
-U06V88T6XK5 snickitysnick Seb 
+U06V88T6XK5 snickitysnick Seb Seb
 U071WECB8N8 leandresth leandre st-hilaire Lenny
 U076CU56Q2F akesjesse Jesse A Jesse A
 U078ATKEVN3 tripp.dellavilla Tripp Tripp
@@ -202,7 +202,7 @@ U08923W9PPC pinedrops.music Christian
 U08DK7J4G5Q zalswed Shneur Swedlow 
 U08G0UHLY3B jeffcleary6572 Jeff Cleary 
 U08MNA17NCR justaverylee Avery 
-U08MW26Q0DP sound.apodaca Sound Apodaca 
+U08MW26Q0DP sound.apodaca Sound Apodaca xound
 U08NSDGL5RC kaimossclarke kai 
 U08NY2775C3 github GitHub 
 U08PGMRKLR5 bird.brains.jason Jason Gan Jason Gan
@@ -219,7 +219,7 @@ U0959K5LTT7 cody913 cody913
 U095S9P8T2T doriapei19 doria 
 U0964T21BU5 evamaxfieldbrown Eva Maxfield 
 U097EE94H8X johnson_logan Logan 
-U097QFLG6QL poll_bot_abgup Poll Bot - abgup 
+U097QFLG6QL poll_bot_abgup (no real name) 
 U0998DJFDL3 brentpeek3 Brent 
 U099YM701KQ parks.jake Jake Parks Jake Parks
 U09A22F4FUH gerald.p.mccann Jerry Mccann 
@@ -230,3 +230,11 @@ U09DFFJD9UJ elaine.mcclure22 Elaine Mcclure22
 U09DVERAXK3 williams.kirstie4 Giggles 
 U09E8J3VBEC samr.range Sam Range 
 U09F3KZRTBQ gamenight_bot_abgup Gamenight Bot - abgup 
+U09G368QV55 savwphoto Sav W Machete Dog
+U09GH8EVAG6 jieucogco Jasmine Eucogco Jasmine
+U09H1E9L2NN 57cjjb9gj8 Genki 
+U09H368HUCD galaxytogluon Milo 
+U09HK6BKDHD kellenandrew111 Kellen Andrew Kellen
+U09KC8Z7KPD slack1 diego llanes 
+U09KSBPD3JP olsonje312 Jeff Olson Jeff Olson
+U09ML3CV3JB anoky96 Anthony Costarelli Anthony Costarelli
