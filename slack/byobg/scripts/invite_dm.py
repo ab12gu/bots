@@ -17,14 +17,14 @@ client = WebClient(token=SLACK_BOT_TOKEN)
 #USER_ID = "U06AWV00DL2"
 
 # Load user list from JSON
-with open("../data/subscribers.json", "r") as f:
+with open("data/subscribers.json", "r") as f:
     users = json.load(f)
 
 for user in users:
     user_id = user["id"] #USER_ID
 
     # Load message from file
-    with open("../data/message.txt", "r") as f:
+    with open("data/message.txt", "r") as f:
         message = f.read().strip()
 
     try:
