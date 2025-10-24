@@ -23,17 +23,9 @@ with open("gamenight/subscribers.json", "r") as f:
 for user in users:
     user_id = user["id"] #USER_ID
 
-    message = textwrap.dedent(f"""
-    
-        Gamenight Tomorrow 7pm!!!
-
-        imma b in Vancouver but
-        John is host, dm him on arrival
-        678-849-3221
-
-        Check website for deets:
-        <https://byobg.com|byobg.com>
-    """)
+    # Load message from file
+    with open("../data/message.txt", "r") as f:
+        message = f.read().strip()
 
     try:
         # Open DM channel
