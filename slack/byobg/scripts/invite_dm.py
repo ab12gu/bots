@@ -28,14 +28,24 @@ for user in users:
         message = f.read().strip()
 
     try:
-        # Open DM channel
-        dm = client.conversations_open(users=user_id)
-        channel_id = dm["channel"]["id"]
+        # Create a private group chat
+        channel_name = f"byobg-{user['name']}"  # Using user's name from JSON for channel name
+        response = client.conversations_create(
+            name=channel_name,
+            is_private=True
+        )
+        channel_id = response["channel"]["id"]
+
+        # Invite both the user and abgup to the channel
+        client.conversations_invite(
+            channel=channel_id,
+            users=f"{user_id},abgup"
+        )
 
         # Send message
         client.chat_postMessage(channel=channel_id, text=message)
 
-        print(f"Message sent to {user_id}")
+        print(f"Group chat created and message sent with {user_id} and abgup")
 
     except SlackApiError as e:
-        print(f"Error sending DM: {e.response['error']}")
+        print(f"Error creating group chat: {e.response['error']}")
