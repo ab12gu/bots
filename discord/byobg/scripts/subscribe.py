@@ -57,7 +57,10 @@ async def subscribe(ctx):
     with open(SUB_FILE, "w") as f:
         json.dump(list(subscribers), f, indent=2)
     await ctx.send("You have subscribed!")
-    await ctx.send(ctx)
+    await ctx.send(ctx.author.id)
+    await ctx.send(ctx.author.name)
+    await ctx.send(ctx.author.display_name)
+    await ctx.send(ctx.author.global_name)
     push_json_to_github()
 
 
