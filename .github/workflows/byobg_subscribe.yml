@@ -39,4 +39,4 @@ jobs:
         run: pip install uv
 
       - name: Run script
-        run: uv run python subscribe.py
+        run: uv run python scripts/subscribe.py
