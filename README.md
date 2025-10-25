@@ -9,7 +9,8 @@ bots to use with discord
 discord api:
 
 - [https://discord.com/developers/applications](https://discord.com/developers/applications)
-
+- [https://discordpy.readthedocs.io/](https://discordpy.readthedocs.io/)
+- [github/discord/ext/commands/context.py#L35](https://github.com/Rapptz/discord.py/blob/async/discord/ext/commands/context.py#L35)
 
 ## Slack bots
 
