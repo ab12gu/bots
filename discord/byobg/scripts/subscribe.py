@@ -53,17 +53,16 @@ def push_json_to_github():
 
 @bot.command()
 async def subscribe(ctx):
-    print("SUBS CTX VALUE:", ctx)
     subscribers.add(ctx.author.id)
     with open(SUB_FILE, "w") as f:
         json.dump(list(subscribers), f, indent=2)
     await ctx.send("You have subscribed!")
+    await ctx.send(ctx)
     push_json_to_github()
 
 
 @bot.command()
 async def unsubscribe(ctx):
-    print("UNSUBS CTX VALUE:", ctx)
     subscribers.discard(ctx.author.id)
     with open(SUB_FILE, "w") as f:
         json.dump(list(subscribers), f, indent=2)
