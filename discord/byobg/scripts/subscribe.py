@@ -46,13 +46,14 @@ def push_json_to_github():
         # Push using the origin remote (checkout already configured credentials)
         subprocess.run(["git", "push", "origin", "main"], check=True)
 
-        print("✅ Pushed subscribers.json to GitHub")
+        print("SUCCESSFULLY Pushed subscribers.json to GitHub")
     except subprocess.CalledProcessError as e:
-        print("❌ Git push failed:", e)
+        print("ERROR Git push failed:", e)
 
 
 @bot.command()
 async def subscribe(ctx):
+    print("SUBS CTX VALUE:", ctx)
     subscribers.add(ctx.author.id)
     with open(SUB_FILE, "w") as f:
         json.dump(list(subscribers), f, indent=2)
@@ -62,6 +63,7 @@ async def subscribe(ctx):
 
 @bot.command()
 async def unsubscribe(ctx):
+    print("UNSUBS CTX VALUE:", ctx)
     subscribers.discard(ctx.author.id)
     with open(SUB_FILE, "w") as f:
         json.dump(list(subscribers), f, indent=2)
