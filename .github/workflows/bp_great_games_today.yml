@@ -25,7 +25,7 @@ jobs:
       - name: Run Slack script
         run: python slack/206bikepolo/great_games_today.py
         env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+          POLL_BOT_TOKEN: ${{ secrets.POLL_BOT_TOKEN }}
           CHANNEL_ID: ${{ github.event.schedule == '0 3 * * 1' && secrets.CHANNEL_ID_PICKUP || secrets.CHANNEL_ID_NEWBIE }}
           #CHANNEL_ID: ${{ secrets.CHANNEL_ID_NEWBIE }}
 
