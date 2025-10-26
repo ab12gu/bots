@@ -9,7 +9,7 @@ jobs:
       run:
         working-directory: slack/byobg/
     env:
-      SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
+      BYOBG_BOT_TOKEN: ${{ secrets.BYOBG_BOT_TOKEN }}
 
     steps:
       - uses: actions/checkout@v3
