@@ -6,8 +6,8 @@ import asyncio
 
 # Paths
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-SUB_FILE = os.path.join(SCRIPT_DIR, "subscribers.json")
-MSG_FILE = os.path.join(SCRIPT_DIR, "message.txt")
+SUB_FILE = os.path.join(SCRIPT_DIR, "data", "subscribers_new.json")
+MSG_FILE = os.path.join(SCRIPT_DIR, "data", "message.txt")
 
 # Load subscribers from JSON
 if os.path.exists(SUB_FILE):
@@ -44,9 +44,9 @@ async def on_ready():
             
             if user:
                 await user.send(MESSAGE_TO_SEND)
-                print(f"✅ Sent DM to {user.name}")
+                print(f"SUCCESSFULL Sent DM to {user.name}")
         except Exception as e:
-            print(f"❌ Could not DM {user_id}: {e}")
+            print(f"FAILED Could not DM {user_id}: {e}")
 
         # Add delay to avoid rate limits
         await asyncio.sleep(1)
