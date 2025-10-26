@@ -72,7 +72,7 @@ async def subscribe(ctx):
 async def unsubscribe(ctx):
     subscribers = [s for s in subscribers if s["id"] != ctx.author.id]
     with open(SUB_FILE, "w") as f:
-        json.dump(subscribers), f, indent=2)
+        json.dump(subscribers, f, indent=2)
     await ctx.send("You have unsubscribed!")
     push_json_to_github()
 
