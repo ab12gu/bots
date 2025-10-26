@@ -1,7 +1,7 @@
 import os
 import requests
 
-SLACK_TOKEN = os.getenv("SLACK_TOKEN")
+POLL_BOT_TOKEN = os.getenv("POLL_BOT_TOKEN")
 CHANNEL_ID = os.getenv("CHANNEL_ID")
 
 text = (
