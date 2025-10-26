@@ -9,7 +9,7 @@ BOT_TOKEN = os.getenv("BOT_TOKEN")
 REPO_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PARENT_DIR = os.path.dirname(SCRIPT_DIR)
-SUB_FILE = os.path.join(PARENT_DIR, "data", "subscribers_new.json")
+SUB_FILE = os.path.join(PARENT_DIR, "data", "subscribers.json")
 
 # Load subscribers
 if os.path.exists(SUB_FILE):
