@@ -22,7 +22,7 @@ res = requests.post("https://slack.com/api/chat.delete", json={
     "channel": CHANNEL_ID,
     "ts": MESSAGE_TS
 }, headers={
-    "Authorization": f"Bearer {SLACK_TOKEN}",
+    "Authorization": f"Bearer {POLL_BOT_TOKEN}",
     "Content-Type": "application/json"
 })
 
