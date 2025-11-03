@@ -22,5 +22,5 @@ jobs:
         run: pip install uv
 
       - name: Run script
-        run: uv run python invite.py
+        run: uv run python scripts/invite.py
 
