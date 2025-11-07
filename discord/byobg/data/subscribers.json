@@ -1,11 +1,5 @@
 [
     {
-    "id": 419387458644475914,
-    "name": "abgup",
-    "display_name": "abgup",
-    "global_name": "abgup"
-  },
-    {
     "id": 231652835928965121,
     "name": "rj0709",
     "display_name": "RJ",
@@ -16,6 +10,12 @@
     "name": "fosse",
     "display_name": "fosse",
     "global_name": "fosse"
+  },
+  {
+    "id": 419387458644475914,
+    "name": "abgup",
+    "display_name": "abgup",
+    "global_name": "abgup"
   },
   {
     "id": 174196210842861568,
