@@ -1,11 +1,11 @@
 [
-    {
+  {
     "id": 231652835928965121,
     "name": "rj0709",
     "display_name": "RJ",
     "global_name": "rj0709"
   },
-    {
+  {
     "id": 191374469292490752,
     "name": "fosse",
     "display_name": "fosse",
@@ -22,6 +22,11 @@
     "name": "bynaryfission",
     "display_name": "Bynary Fission",
     "global_name": "Bynary Fission"
+  },
+  {
+    "id": 866927088946642954,
+    "name": "dmlar",
+    "display_name": "dmlar",
+    "global_name": "dmlar"
   }
-  
 ]
